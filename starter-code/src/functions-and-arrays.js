@@ -1,12 +1,12 @@
 
-// ITERATION 1
+// ITERATION 1 - FIND THE MAXIMUM
 
 function maxOfTwoNumbers (num1, num2) {
   return Math.max(num1, num2);
 }
 maxOfTwoNumbers(34, 12);
 
-// ITERATION 2
+// ITERATION 2 - FINDING LONGEST WORD
 
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
@@ -24,7 +24,7 @@ function findLongestWord (arrayOfWords) {
 }
 findLongestWord(words);
 
-// ITERATION 3
+// ITERATION 3 - CALCULATING A SUM
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
@@ -44,7 +44,7 @@ function sumArray (arrayOfNumbers) {
   return sum;
 } */
 
-// ITERATION 4
+// ITERATION 4.1 - CALCULATE THE AVERAGE - ARRAY OF NUMBERS
 
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
@@ -60,8 +60,8 @@ function averageNumbers (arrayOfNumbers) {
   return average;
 }
 
+// ITERATION 4.2 - CALCULATE THE AVERAGE - ARRAY OF STRINGS
 
-// Array of Strings
 const wordsArr = [
   'seat',
   'correspond',
@@ -75,7 +75,19 @@ const wordsArr = [
   'palace'
 ];
 
-// Unique Arrays
+function averageWordLength(arrayOfWords) {
+  if (!arrayOfWords.length) return null;
+  const numberOfWords = arrayOfWords.length;
+  let totalLength = 0;
+  for (let word of arrayOfWords) {
+    totalLength += word.length;
+  }
+  const averageLength = totalLength / numberOfWords;
+  return averageLength;
+}
+
+// ITERATION 5 - UNIQUE ARRAYS
+
 const wordsUnique = [
   'crab',
   'poison',
@@ -90,7 +102,18 @@ const wordsUnique = [
   'bring'
 ];
 
-// Finding Elements
+function uniquifyArray(arrayOfWords) {
+  const arrayOfUniques = [];
+  for (let word of arrayOfWords) {
+    if (arrayOfUniques.indexOf(word) < 0) {
+      arrayOfUniques.push(word);
+    }
+  }
+  return arrayOfUniques;
+}
+
+// ITERATION 6 - FINDING ELEMENTS
+
 const wordsFind = [
   'machine',
   'subset',
@@ -102,7 +125,15 @@ const wordsFind = [
   'disobedience'
 ];
 
-// Counting Repetition
+function doesWordExist(arrayOfWords, word) {
+  for (let occurrence of arrayOfWords) {
+    if (occurrence === word) return true;
+  }
+  return false;
+}
+
+// ITERATION 7 - COUNTING REPETITION
+
 const wordsCount = [
   'machine',
   'matter',
@@ -117,7 +148,15 @@ const wordsCount = [
   'matter'
 ];
 
-// Bonus
+function howManyTimes(arrayOfWords, word) {
+  let count = 0;
+  for (let occurrence of arrayOfWords) {
+    if (occurrence === word) count++;
+  }
+  return count;
+}
+
+// ITERATION 8 - BONUS
 
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
@@ -141,3 +180,7 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+function greatestProduct () {
+  
+}
